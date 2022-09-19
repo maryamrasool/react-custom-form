@@ -19,13 +19,13 @@ You will also see any lint errors in the console.
 Some of the main points that were kept in mind while creating the custom form component are as follows:
 
 1. Form component accepts an object containing the information relevant to the input fields. The object for an input field must contain a label and a name for the field. This is required to create a unique input field and display it
-2. The input field object may contain optional attributes to define whether the field is required or not. It may also contain validation regex and a custom error message to display when the field does not validate
+2. The input field object may contain optional attributes to define whether the field is required or not. It may also contain validation regex and a custom error message to be displayed when the field does not validate
 3. Form component also accepts a callback function which is executed when the form is submitted successfully. An object containing the field data (key and value) is passed to this callback function from the form component
 4. The form component has two types of validation checks. It checks if a field was required or not and also compares the user input to a custom regex pattern
 
 ## Assumptions
 
-When implementing the form component, there were several assumptions made which are as follows:
+When implementing the form component, the assumptions made are as follows:
 
 1. Validation for an input field will be done using a Regex pattern.
 
