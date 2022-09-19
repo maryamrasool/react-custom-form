@@ -14,33 +14,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## Solution formulation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Some of the main points that were kept in mind while creating the custom form component are as follows:
 
-### `npm run build`
+1. Form component accepts an object containing the information relevant to the input fields. The object for an input field must contain a label and a name for the field. This is required to create a unique input field and display it
+2. The input field object may contain optional attributes to define whether the field is required or not. It may also contain validation regex and a custom error message to display when the field does not validate
+3. Form component also accepts a callback function which is executed when the form is submitted successfully. An object containing the field data (key and value) is passed to this callback function from the form component
+4. The form component has two types of validation checks. It checks if a field was required or not and also compares the user input to a custom regex pattern
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Assumptions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+When implementing the form component, there were several assumptions made which are as follows:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Validation for an input field will be done using a Regex pattern.
 
-### `npm run eject`
+## Libraries/Tools used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project uses React, TypeScript and relies on Tailwind css for styling of the form component.
+Additionally, it uses react-toastify to display toast message on successful submission of the form.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Possible Enhancements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Create custom component for input field
+2. Enhance validation from using a regex to a custom validation callback function
+3. Pass custom input field styles to the form component

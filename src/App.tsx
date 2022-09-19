@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Form from "./components/Form";
+import { FieldData } from "./types/form";
+
+const App: React.FC = () => {
+  const inputs = {
+    firstName: {
+      name: "firstName",
+      label: "First Name",
+      required: true,
+      validation: {
+        regex: "^wooga.name",
+        errorMessage: "Name must start with wooga.name",
+      },
+    },
+    lastName: {
+      name: "lastName",
+      label: "Last Name",
+      required: true,
+    },
+    occupation: {
+      name: "occupation",
+      label: "Occupation",
+    },
+  };
+
+  // callback function that receives form data after successful submission
+  const handleSubmit = (formData: FieldData) => {
+    console.log("Here", formData);
+  };
+
+  return <Form inputs={inputs} handleFormSubmit={handleSubmit} />;
+};
 
 export default App;
